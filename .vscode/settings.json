@@ -4,5 +4,11 @@
     "plaintext": false,
     "markdown": false,
     "csharp": false
+  },
+  "files.exclude": {
+    "**/*.rpyc": true,
+    "**/*.rpa": true,
+    "**/*.rpymc": true,
+    "**/cache/": true
   }
 }
