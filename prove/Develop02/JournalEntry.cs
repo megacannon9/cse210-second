@@ -45,6 +45,23 @@ class JournalEntry
 
     public void LoadJournalEntry()
     {
-        
+        Console.WriteLine("What is the path to your file?");
+        string _filePathLoad = Console.ReadLine().Trim();
+        bool topFlag = true;
+        while (topFlag == true)
+        {
+            if (File.Exists(_filePathLoad))
+            {
+                string text = File.ReadAllText(_filePathLoad);
+                Console.WriteLine(text);
+                topFlag = false;
+            }
+            else
+            {
+                Console.WriteLine("Invalid file path");
+                Console.WriteLine("What is the path to your file? (there should be no quotations around the filepath)");
+                _filePathLoad = Console.ReadLine().Trim();
+            }
+        }
     }
 }

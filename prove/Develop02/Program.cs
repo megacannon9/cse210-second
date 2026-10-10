@@ -17,6 +17,7 @@ class Program
                 case 1:
                     Console.WriteLine("Create");
                     newEntry.CreateJournalEntry();
+                    Console.WriteLine();
                     break;
                 case 2:
                     Console.WriteLine("Display");
@@ -26,10 +27,12 @@ class Program
                 case 3:
                     Console.WriteLine("Save");
                     newEntry.SaveJournalEntry();
+                    Console.WriteLine();
                     break;
                 case 4:
                     Console.WriteLine("Read");
                     newEntry.LoadJournalEntry();
+                    Console.WriteLine();
                     break;                
             }
         }
