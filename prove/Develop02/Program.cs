@@ -20,6 +20,7 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Display");
+                    newEntry.DisplayEntry();
                     break;
                 case 3:
                     Console.WriteLine("Save");
