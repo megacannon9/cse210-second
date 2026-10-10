@@ -21,12 +21,15 @@ class Program
                 case 2:
                     Console.WriteLine("Display");
                     newEntry.DisplayEntry();
+                    Console.WriteLine();
                     break;
                 case 3:
                     Console.WriteLine("Save");
+                    newEntry.SaveJournalEntry();
                     break;
                 case 4:
                     Console.WriteLine("Read");
+                    newEntry.LoadJournalEntry();
                     break;                
             }
         }

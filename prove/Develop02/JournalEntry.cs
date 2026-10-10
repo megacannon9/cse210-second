@@ -8,13 +8,6 @@ class JournalEntry
 
     public List<string> _promptList = new List<string>();
 
-    public void DisplayEntry()
-    {
-        Console.WriteLine(_date);
-        Console.WriteLine(_prompt);
-        Console.WriteLine(_response);
-    }
-
     public void CreateJournalEntry()
     {
         _date = "October 7th, 2026";
@@ -29,5 +22,29 @@ class JournalEntry
 
         Console.WriteLine($"{_prompt}");
         _response = Console.ReadLine();
+    }
+
+    public void DisplayEntry()
+    {
+        Console.WriteLine(_date);
+        Console.WriteLine(_prompt);
+        Console.WriteLine(_response);
+    }
+
+    public void SaveJournalEntry()
+    {
+        Console.WriteLine("Please enter a filename.");
+        string _fileName = Console.ReadLine();
+        string _fileDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string _filePath = Path.Combine(_fileDir, _fileName);
+        string _allText = ($"\n\n{_date} \n{_prompt} \n{_response}");
+        File.AppendAllText(_filePath, _allText);
+        Console.WriteLine($"Your file is saved to {_filePath}");
+        Console.WriteLine();
+    }
+
+    public void LoadJournalEntry()
+    {
+        
     }
 }
