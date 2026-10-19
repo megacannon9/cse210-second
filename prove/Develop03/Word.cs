@@ -24,11 +24,23 @@ class Word
 
     public void Display()
     {
-        Console.Write($"{_word} ");
+        Console.Write($"{GetWordString()} ");
     }
 
     public string GetWordString()
     {
-        return _word;
+        string returnString = "";
+        if (_hidden)
+        {
+            for (int i=0; i < _word.Length; i++)
+            {
+                returnString += '_';
+            }
+        }
+        else
+        {
+            returnString = _word;
+        }
+        return returnString;
     }
 }
