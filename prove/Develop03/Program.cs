@@ -9,5 +9,11 @@ class Program
         test.Hide();
         Console.WriteLine();
         test.Display();
+    
+        
+        Scripture myScripture = new Scripture("moses",1, 39, "Behold, this it my work and my glory to bring to pass the immortality and eternal life of man.");
+        Console.Clear();
+        myScripture.ShowScripture();
+
     }
 }
