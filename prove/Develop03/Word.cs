@@ -34,7 +34,14 @@ class Word
         {
             for (int i=0; i < _word.Length; i++)
             {
-                returnString += '_';
+                if(char.IsPunctuation(_word[i]))
+                {
+                    returnString += _word[i];
+                }
+                else
+                {
+                    returnString += '_';
+                }
             }
         }
         else
