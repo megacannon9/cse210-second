@@ -10,8 +10,6 @@ class ScriptureReference
 
     private int _endVerse;
 
-
-    //getter for each variable
     public string GetScriptureReference()
     {
         return GetScriptureReferenceString();

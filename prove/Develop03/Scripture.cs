@@ -1,8 +1,8 @@
 class Scripture
 {
-    List<Word> _words;
+    private List<Word> _words;
     //TODO: add scripture reference
-    ScriptureReference _reference;
+    private ScriptureReference _reference;
 
     public Scripture(string bookName, int chapter, int verse, string text)
     {
@@ -28,20 +28,24 @@ class Scripture
 
     public bool HideWords()
     {
-            
+        Random hideWords = new Random();
         for(int i =0 ;i<3;i++)
         {
-            //make sure it can't pick a word that's already hidden for i
-            Random hideWords = new Random();
-            int wowrdCount = _words.Count;
-            int index = hideWords.Next(wowrdCount);
-            Word randomWord = _words[index];
-            if(!randomWord.IsHidden())
+            if(NumberOfHiddenWords() == _words.Count())
             {
-                randomWord.Hide();
+                return false;
             }
+            int wordCount = _words.Count;
+            int index = hideWords.Next(wordCount);
+            Word randomWord = _words[index];
+            while(randomWord.IsHidden())
+            {
+                index = hideWords.Next(wordCount);
+                randomWord = _words[index];
+            }
+            randomWord.Hide();
         }
-        return(NumberOfHiddenWords()<_words.Count());
+        return NumberOfHiddenWords()<=_words.Count;
     }
 
     private int NumberOfHiddenWords()
