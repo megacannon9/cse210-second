@@ -1,13 +1,15 @@
-﻿class Program
+﻿using System.ComponentModel.Design.Serialization;
+
+class Program
 {
     static void Main()
     {
         Person myPerson = new Person("Bob","Floyd",18,114);
 
-        myPerson.DisplayPersonInformation();
+        Console.WriteLine(myPerson.GetPersonInformation());
 
         Police myPolice = new Police("Lance","Pig", 34, 200,"Death");
         
-        myPolice.DisplayPersonInformation();
+        Console.WriteLine(myPolice.GetPoliceInformation());
     }
 }
