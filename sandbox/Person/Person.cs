@@ -10,7 +10,7 @@ class Person
 
     private double _weight;
 
-    public Person( string firstName, string lastName, int age, double weight)
+    public Person(string firstName, string lastName, int age, double weight)
     {
         _firstName = firstName;
         _lastName = lastName;
