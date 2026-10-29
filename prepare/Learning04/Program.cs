@@ -9,5 +9,7 @@ class Program
         Console.WriteLine(test.GetSummary());
         MathAssignment test2 = new MathAssignment("Samuel","Math","15", "1-9");
         Console.WriteLine(test2.GetHomeworkList());
+        WritingAssignment test3 = new WritingAssignment("Samuel","European History","The battle of Bluffdale");
+        Console.WriteLine(test3.GetWritingInformation());
     }
 }
